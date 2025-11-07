@@ -6,11 +6,11 @@ namespace Tyuiu.MalkovaMS.Sprint4.Task1.V15.Lib
     {
         public int Calculate(int[] array)
         {
-            int res = 0;
+            int res = 1;
             for (int i = 0; i < array.Length; i ++)
             {
                 if (array[i] % 2 == 0)
-                    res += array[i];
+                    res *= array[i];
             }
             return res;
         }
