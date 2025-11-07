@@ -1,5 +1,4 @@
-﻿using Tyuiu.MalkovaMS.Sprint4.Task0.V21.Lib;
-
+﻿using Tyuiu.MalkovaMS.Sprint4.Task1.V15.Lib;
 internal class Program
 {
     private static void Main(string[] args)
@@ -10,29 +9,35 @@ internal class Program
 
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* Спринт #4                                                               *");
-        Console.WriteLine("* Тема: Одномерные массивы (статический ввод)                             *");
+        Console.WriteLine("* Тема: Одномерные массивы (ввод c клавиатуры)                            *");
 
-        Console.WriteLine("* Задание #0                                                              *");
-        Console.WriteLine("* Вариант #21                                                             *");
+        Console.WriteLine("* Задание #1                                                              *");
+        Console.WriteLine("* Вариант #15                                                             *");
         Console.WriteLine("* Выполнила: Малькова Мария Сергеевна | ИИПб-25-1                         *");
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* УСЛОВИЕ:                                                                *");
-        Console.WriteLine("* Дан одномерный целочисленный массив на 10 элементов, заполненный        *");
-        Console.WriteLine("* статическими значениями в диапазоне от 0 до 9. Подсчитать сумму четных  *");
-        Console.WriteLine("* элементов массива.                                                      *");
+        Console.WriteLine("* Дан одномерный целочисленный массив на 14 элементов, заполненный        *");
+        Console.WriteLine("* значениями с клавиатуры в диапазоне от 4 до 9. Подсчитать произведение  *");
+        Console.WriteLine("* четных элементов массива.                                               *");
         Console.WriteLine("*                                                                         *");
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
 
-        int[] numsArray = { 8, 2, 4, 3, 8, 5, 6, 7, 9, 8 };
+
+        int[] numsArray = new int[14];
+        for (int i = 0; i < 14; i++)
+        {
+            Console.Write("Введите значение " + i + " элемента массива: ");
+            numsArray[i] = Convert.ToInt32(Console.ReadLine());
+        }
         Console.WriteLine("***************************************************************************");
-        Console.WriteLine("Исходный массив:");
+        Console.WriteLine("Массив:");
         for (int i = 0; i < numsArray.Length; i++)
         {
             Console.Write(numsArray[i] + " ");
         }
         Console.WriteLine();
-        int res = ds.GetSumEvenArrEl(numsArray);
+        int res = ds.Calculate(numsArray);
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
         Console.WriteLine("***************************************************************************");
