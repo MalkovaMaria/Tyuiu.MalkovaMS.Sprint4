@@ -23,9 +23,13 @@ internal class Program
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
 
+        int len;
+        Console.Write("Введите количество элементов массива: ");
+        len = Convert.ToInt32(Console.ReadLine());
 
-        int[] numsArray = new int[14];
-        for (int i = 0; i < 14; i++)
+
+        int[] numsArray = new int[len];
+        for (int i = 0; i < len; i++)
         {
             Console.Write("Введите значение " + i + " элемента массива: ");
             numsArray[i] = Convert.ToInt32(Console.ReadLine());
