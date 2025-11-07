@@ -9,7 +9,7 @@ namespace Tyuiu.MalkovaMS.Sprint4.Task0.V21.Lib
             int res = 0;
             for (int i = 0; i < array.Length; i++)
             {
-                if (i % 2 == 0)
+                if (array[i] % 2 == 0)
                     res += array[i];
             }
             return res;
