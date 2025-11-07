@@ -6,7 +6,7 @@ namespace Tyuiu.MalkovaMS.Sprint4.Task0.V21.Test
     public sealed class DataServiceTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ValidGetSumEvenArrEl()
         {
             DataService ds = new DataService();
             int[] nums = { 8, 2, 4, 3, 8, 5, 6, 7, 9, 8 };
