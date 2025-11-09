@@ -1,25 +1,24 @@
-﻿using Tyuiu.MalkovaMS.Sprint4.Task4.V2.Lib;
-
+﻿using Tyuiu.MalkovaMS.Sprint4.Task5.V27.Lib;
 internal class Program
 {
     private static void Main(string[] args)
     {
         DataService ds = new DataService();
-
+        Random rnd = new Random();
         Console.Title = "Спринт #4 | Выполнила: Малькова М. С. | ИИПб-25-1";
 
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* Спринт #4                                                               *");
-        Console.WriteLine("* Тема: Двумерные массивы (ввод с клавиатуры)                             *");
+        Console.WriteLine("* Тема: Двумерные массивы (генератор случайных чисел)                     *");
 
-        Console.WriteLine("* Задание #4                                                              *");
-        Console.WriteLine("* Вариант #2                                                              *");
+        Console.WriteLine("* Задание #5                                                              *");
+        Console.WriteLine("* Вариант #27                                                             *");
         Console.WriteLine("* Выполнила: Малькова Мария Сергеевна | ИИПб-25-1                         *");
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* УСЛОВИЕ:                                                                *");
         Console.WriteLine("* Дан двумерный целочисленный массив 5 на 5 элементов, заполненный        *");
-        Console.WriteLine("* значениями с клавиатуры в диапазоне от 2 до 9. Заменить нечетные        *");
-        Console.WriteLine("* элементы массива на 0.                                                  *");
+        Console.WriteLine("* случайными значениями в диапазоне от -5 до 7. Найти количество          *");
+        Console.WriteLine("* отрицательных элементов.                                                *");
         Console.WriteLine("*                                                                         *");
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
@@ -35,12 +34,9 @@ internal class Program
         {
             for (int j = 0; j < columns; j++)
             {
-                Console.Write($"Введите {i},{j} элемент массива: ");
-                matrix[i,j] = Convert.ToInt32(Console.ReadLine());
+                matrix[i, j] = rnd.Next(-5, 7);
             }
-            Console.WriteLine();
         }
-        Console.WriteLine("***************************************************************************");
         Console.WriteLine("Массив:");
         for (int i = 0; i < rows; i++)
         {
@@ -54,16 +50,8 @@ internal class Program
         Console.WriteLine("***************************************************************************");
         Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
         Console.WriteLine("***************************************************************************");
-        int[,] res = ds.Calculate(matrix);
-        Console.WriteLine("Результирующий массив: ");
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < columns; j++)
-            {
-                Console.Write($"{res[i, j]} \t");
-            }
-            Console.WriteLine();
-        }
+        int res = ds.Calculate(matrix);
+        Console.WriteLine("Количество отрицательных элементов: " + res);
         Console.ReadKey();
     }
 }
